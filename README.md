@@ -31,13 +31,13 @@ module.exports = {
 
 ## Configuration Options
 
-The configuration options for this plugin mirror the [forecast request parameters](https://darksky.net/dev/docs). Please review those docs for more details.
+The configuration options for this plugin mirror the [forecast request parameters](https://darksky.net/dev/docs). Please review those docs for more details. This plugin works well with [gatsby-source-googlemaps-geocoding](https://github.com/Matt-Dionis/gatsby-source-googlemaps-geocoding). If using these two plugins together, make sure that the `gatsby-source-darksky` entry appears first in the config. If so, and you omit `latitude` and `longitude` from this config, the weather information will be fetched for the location provided in the `gatsby-source-darksky` config.
 
 | Option           | Default   | Description                                                                                                                                                                                                                                                                |
 | ---------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `key`            |           | **[required]** Your Dark Sky API key                                                                                                                                                                                                                                        |
-| `latitude`       |           | **[required]** The latitude of a location (in decimal degrees). Positive is north, negative is south.                                                                                                                                             |
-| `longitude`       |           | **[required]** The longitude of a location (in decimal degrees). Positive is east, negative is west.                                                                                                |
+| `latitude`       |           | The latitude of a location (in decimal degrees). Positive is north, negative is south. (optional if used with `gatsby-source-darksky`)                                                                                                                                             |
+| `longitude`       |           | The longitude of a location (in decimal degrees). Positive is east, negative is west. (optional if used with `gatsby-source-darksky`)                                                                                                |
 | `exclude`     |      | Exclude some number of data blocks from the API response. This is useful for reducing latency and saving cache space. The value blocks should be a comma-delimeted list (without spaces) of any of the following: "currently", "minutely", "hourly", "daily", "alerts", "flags"                                                                                                                                                                                 |
 
 ### Example Configuration
